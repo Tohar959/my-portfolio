@@ -12,7 +12,11 @@ import {
   Code2,
   Cloud,
   Cpu,
-  FileUser
+  FileUser,
+  Hash,
+  Braces,
+  Database,
+  Target
 } from "lucide-react";
 
 const projects = [
@@ -73,6 +77,9 @@ const skills = {
     "C",
     "C++",
     "Python",
+    "C#",
+    "PHP",
+    "SQL",
     "Verilog / VHDL",
     "JavaScript / TypeScript",
     "Bash"
@@ -320,6 +327,47 @@ export default function HomePage() {
                 <li>· Process discipline and continuous improvement</li>
               </ul>
             </article>
+
+            <article className="card">
+              <div className="mb-2 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-800 text-emerald-300">
+                    <Target className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-100">
+                      Company Sergeant Major (CSM) &amp; Tactical Leadership
+                    </h3>
+                    <p className="text-xs text-slate-300">IDF Reserve Service</p>
+                  </div>
+                </div>
+                <span className="rounded-full bg-slate-900/80 px-2 py-0.5 text-[0.65rem] text-slate-300">
+                  Leadership · Operations · Logistics
+                </span>
+              </div>
+              <p className="mb-3 text-xs text-slate-300">
+                Combat reserve service with end‑to‑end responsibility for soldiers, equipment and
+                mission readiness in demanding operational environments.
+              </p>
+              <ul className="space-y-1 text-[0.7rem] text-slate-300">
+                <li>
+                  · Orchestrated logistics and operations for 150+ soldiers in high‑pressure reserve
+                  service.
+                </li>
+                <li>
+                  · Led specialized sniper teams, emphasizing precision, discipline and strategic
+                  execution.
+                </li>
+                <li>
+                  · Managed complex resource allocation and supply‑chain workflows in dynamic
+                  environments.
+                </li>
+                <li>
+                  · Demonstrated exceptional resilience and the ability to make critical decisions
+                  under stress.
+                </li>
+              </ul>
+            </article>
           </div>
 
           <div className="space-y-4" id="education">
@@ -375,14 +423,25 @@ export default function HomePage() {
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {skills.languages.map((lang) => (
-                  <span
-                    key={lang}
-                    className="chip border-slate-700/70 bg-slate-900/80 text-[0.7rem]"
-                  >
-                    {lang}
-                  </span>
-                ))}
+                {skills.languages.map((lang) => {
+                  const Icon =
+                    lang === "C#"
+                      ? Hash
+                      : lang === "PHP"
+                      ? Braces
+                      : lang === "SQL"
+                      ? Database
+                      : null;
+                  return (
+                    <span
+                      key={lang}
+                      className="chip flex items-center gap-1 border-slate-700/70 bg-slate-900/80 text-[0.7rem]"
+                    >
+                      {Icon && <Icon className="h-3 w-3 text-slate-300" />}
+                      {lang}
+                    </span>
+                  );
+                })}
               </div>
             </article>
 
