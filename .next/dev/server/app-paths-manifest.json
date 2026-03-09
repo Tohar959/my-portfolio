@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/projects/access-control/page": "app/projects/access-control/page.js",
+  "/projects/cloud-crm/page": "app/projects/cloud-crm/page.js",
+  "/projects/compiler/page": "app/projects/compiler/page.js"
+}
