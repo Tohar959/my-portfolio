@@ -22,7 +22,8 @@ const projects = [
     description:
       "End‑to‑end dual‑factor access control solution combining face recognition and RFID on Raspberry Pi 5 + ESP32, with a web‑based dashboard.",
     stack: ["Raspberry Pi 5", "ESP32", "Python", "OpenCV", "RFID"],
-    href: "/projects/access-control"
+    href: "/projects/access-control",
+    image: ""
   },
   {
     title: "AWS Serverless CRM System",
@@ -37,7 +38,8 @@ const projects = [
       "SES",
       "Node.js"
     ],
-    href: "/projects/cloud-crm"
+    href: "/projects/cloud-crm",
+    image: ""
   },
   {
     title: "CPL Language Compiler",
@@ -45,21 +47,24 @@ const projects = [
     description:
       "A complete compiler from scratch using Flex & Bison, featuring lexical and syntax analysis for a custom C-like language.",
     stack: ["C", "Flex", "Bison", "Unix"],
-    href: "/projects/compiler"
+    href: "/projects/compiler",
+    image: ""
   },
   {
     title: "Sign Language Translation Tool",
     icon: HandHeart,
     description:
       "Computer‑vision based tool that interprets sign language gestures and translates them into text to improve accessibility.",
-    stack: ["Python", "Computer Vision", "ML", "OpenCV"]
+    stack: ["Python", "Computer Vision", "ML", "OpenCV"],
+    image: ""
   },
   {
     title: "7‑Boom FPGA Game",
     icon: Gamepad2,
     description:
       "Interactive counting game implemented on FPGA, exploring digital design, timing constraints and real‑time logic.",
-    stack: ["VHDL / Verilog", "FPGA", "Digital Design"]
+    stack: ["VHDL / Verilog", "FPGA", "Digital Design"],
+    image: ""
   }
 ];
 
@@ -233,11 +238,11 @@ export default function HomePage() {
                       </h3>
                     </div>
                   </div>
-                  {"image" in project && project.image ? (
-                    <div className="mb-3 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/80">
+                  {project.image && project.image.trim() !== "" ? (
+                    <div className="mb-3 overflow-hidden rounded-xl border border-slate-800/80 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900">
                       <Image
                         src={project.image}
-                        alt={`${project.title} architecture`}
+                        alt={`${project.title} illustration`}
                         width={640}
                         height={360}
                         className="h-32 w-full object-cover object-center"
