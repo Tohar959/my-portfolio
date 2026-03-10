@@ -21,12 +21,37 @@ import {
 
 const projects = [
   {
+    title: "CPL Language Compiler",
+    icon: Code2,
+    description:
+      "A complete compiler from scratch using Flex & Bison, featuring lexical and syntax analysis for a custom C-like language targeting RISC‑V.",
+    stack: ["C", "Flex", "Bison", "RISC‑V Assembly"],
+    href: "/projects/compiler",
+    image: ""
+  },
+  {
     title: "Dual-Factor Smart Access Control System",
     icon: ShieldCheck,
     description:
-      "End‑to‑end dual‑factor access control solution combining face recognition and RFID on Raspberry Pi 5 + ESP32, with a web‑based dashboard.",
+      "End‑to‑end dual‑factor access control solution combining face recognition and RFID on Raspberry Pi 5 + ESP32, with a web‑based control interface.",
     stack: ["Raspberry Pi 5", "ESP32", "Python", "OpenCV", "RFID"],
     href: "/projects/access-control",
+    image: ""
+  },
+  {
+    title: "7‑Boom FPGA Game",
+    icon: Gamepad2,
+    description:
+      "Interactive counting game implemented on FPGA, exploring digital design, timing constraints and real‑time logic.",
+    stack: ["VHDL / Verilog", "FPGA", "Digital Design"],
+    image: ""
+  },
+  {
+    title: "Sign Language Translation Tool",
+    icon: HandHeart,
+    description:
+      "Computer‑vision based tool that interprets sign language gestures and translates them into text to improve accessibility.",
+    stack: ["Python", "Computer Vision", "ML", "OpenCV"],
     image: ""
   },
   {
@@ -44,31 +69,6 @@ const projects = [
     ],
     href: "/projects/cloud-crm",
     image: ""
-  },
-  {
-    title: "CPL Language Compiler",
-    icon: Code2,
-    description:
-      "A complete compiler from scratch using Flex & Bison, featuring lexical and syntax analysis for a custom C-like language.",
-    stack: ["C", "Flex", "Bison", "Unix"],
-    href: "/projects/compiler",
-    image: ""
-  },
-  {
-    title: "Sign Language Translation Tool",
-    icon: HandHeart,
-    description:
-      "Computer‑vision based tool that interprets sign language gestures and translates them into text to improve accessibility.",
-    stack: ["Python", "Computer Vision", "ML", "OpenCV"],
-    image: ""
-  },
-  {
-    title: "7‑Boom FPGA Game",
-    icon: Gamepad2,
-    description:
-      "Interactive counting game implemented on FPGA, exploring digital design, timing constraints and real‑time logic.",
-    stack: ["VHDL / Verilog", "FPGA", "Digital Design"],
-    image: ""
   }
 ];
 
@@ -76,22 +76,24 @@ const skills = {
   languages: [
     "C",
     "C++",
+    "RISC‑V Assembly",
+    "Verilog / VHDL",
     "Python",
     "C#",
     "PHP",
     "SQL",
-    "Verilog / VHDL",
     "JavaScript / TypeScript",
     "Bash"
   ],
   tools: [
-    "Git & GitHub",
     "Linux",
-    "Docker",
-    "Cloud (AWS / Azure basics)",
+    "Linux Kernel & Drivers (basics)",
     "FPGA Toolchains (Xilinx, Intel)",
+    "Git & GitHub",
+    "Docker",
     "CI/CD & Automation",
-    "Monitoring & Observability"
+    "Monitoring & Observability",
+    "Cloud (AWS / Azure basics)"
   ]
 };
 
@@ -106,7 +108,7 @@ export default function HomePage() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-slate-900/80 px-3 py-1 text-xs font-medium text-cyan-200 shadow shadow-black/50 backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,0.9)]" />
-              <span>Computer Engineer · Software & Cloud</span>
+              <span>Computer Engineer · Embedded &amp; Firmware Systems</span>
             </div>
 
             <div className="space-y-4">
@@ -117,11 +119,10 @@ export default function HomePage() {
                 Computer Engineer
               </p>
               <p className="max-w-xl text-sm text-slate-300 sm:text-base">
-                I design and build reliable software systems that bridge
-                low‑level engineering with modern cloud infrastructure.
-                Experienced in security‑oriented environments, embedded
-                development and FPGA design, with a strong academic background
-                in computer engineering.
+                I specialize in developing high‑performance, low‑level software systems where
+                hardware meets code. With expertise in Embedded Systems, Compiler Design, and FPGA
+                architecture, I focus on optimizing hardware‑software integration and real‑time
+                performance.
               </p>
             </div>
 
@@ -164,12 +165,12 @@ export default function HomePage() {
 
             <div className="flex flex-wrap gap-2 text-xs text-slate-300">
               <span className="chip gap-1">
-                <Cloud className="h-3 w-3 text-cyan-300" />
-                Cloud‑aware development
+                <Cpu className="h-3 w-3 text-emerald-300" />
+                Embedded &amp; firmware engineering
               </span>
               <span className="chip gap-1">
-                <Cpu className="h-3 w-3 text-indigo-300" />
-                Embedded & FPGA
+                <Code2 className="h-3 w-3 text-cyan-300" />
+                Compiler &amp; language tooling
               </span>
             </div>
           </div>
